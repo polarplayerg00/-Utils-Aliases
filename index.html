@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&Utils - Aliases</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        pre {
+            white-space: pre-wrap; /* Permite que as linhas quebrem quando necessárias */
+            word-wrap: break-word;  /* Permite que as palavras quebrem quando necessárias */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aliases: Guia de Configurações Simples</h1>
+    </header>
+    <main>
+        <section>
+            <h2>O que são Aliases e Gatilhos?</h2>
+            <p>Aliases e gatilhos são formas de simplificar comandos em um aplicativo. Aliases são nomes alternativos para seus comandos, enquanto gatilhos são os símbolos ou letras que você usa para iniciar esses comandos.</p>
+        </section>
+        <section>
+            <h2>Como Configurar?</h2>
+            <div class="content">
+                <p>Para configurar, siga estas etapas:</p>
+                <ol>
+                    <li><strong>Crie uma variável chamada <code>gatilhos</code></strong>. Adicione os gatilhos desejados separados por hífen (-). Exemplo:</li>
+                    <pre><code>$var[gatilhos;comando1-comando2-...]</code></pre>
+                    <li><strong>Defina até 5 aliases</strong>. Separe cada alias por hífen (-). Exemplo:</li>
+                    <pre><code>alias1-alias2-alias3</code></pre>
+                    <li><strong>Escolha um prefixo para o seu comando.</strong> No app, não coloque o nome do comando no gatilho (como .help ou .ping); use apenas o prefixo desejado, como <code>.</code> ou outro de sua escolha.</li>
+                    <li>
+                        <strong>Cole o código abaixo da variável <code>$var</code> que você criou:</strong>
+                        <pre><code>$httpGet[https://pastebin.com/raw/MkByuUaG]
+$eval[$httpResult]</code></pre>
+                    </li>
+                    <li>
+                       <strong>Adicione o código desejado abaixo de tudo e adapte conforme necessário.</strong> Parabéns! Você configurou os aliases com sucesso!
+                    </li>
+                </ol>
+            </div>
+        </section>
+        <section>
+            <h2>Exemplo</h2>
+            <img src="./layout.jpg" alt="Exemplo de layout" />
+        </section>
+        <section>
+            <h2>Seu Código Base</h2>
+            <pre><code id="codeBlock">$nomention
+$c[Adicione os gatilhos que você deseja abaixo, separados por -. ( Max 5 )]
+$c[by: vtz_polar]
+$var[gatilhos;gatilho1-gatilho2-gatilho3-gatilho4]
+$httpGet[https://pastebin.com/raw/Sbc3KSrv]
+$eval[$httpResult]
+
+$c[Seu código aqui]</code></pre>
+            <button onclick="copyToClipboard()">Copiar</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 - Desenvolvido por vtz_polar</p>
+    </footer>
+
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("codeBlock").innerText;
+            navigator.clipboard.writeText(copyText).then(function() {
+                alert("Texto copiado para a área de transferência!");
+            }, function(err) {
+                alert("Erro ao copiar texto: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
